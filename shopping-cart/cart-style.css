@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+/* تنسيق العربة */
+
+/* تنسيق الصفحة بشكل عام */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+    direction: rtl;
+    font-family: "El Messiri", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    min-height: 100vh;
+    background-color: #f5e7c6;
+    overflow-x: hidden; 
+}
+
+/* تعديل عرض العربة */
+#cart {
+    width: 90%; 
+    max-width: 140rem;
+    padding: 2rem;
+    margin: 6rem auto; 
+    background: white;
+    border-radius: 5rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+}
+
+/* تنسيق عنوان القسم الخاص بعربة التسوق */
+h1 {
+    text-align: center;
+    margin-bottom:3rem;
+    color: #222222;
+    font-family: "Cairo", sans-serif;
+    border-bottom: 0.2rem solid black;
+    line-height: 3rem;
+}
+
+
+/* تنسيق العناصر في العربة */
+#cart-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    width: 100%; 
+    overflow-x: hidden; 
+}
+
+/* تنسيق عنصر الوجبة */
+.cart-item {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 1rem; 
+    margin: 1rem; 
+    padding: 1rem;
+    width: calc(30% - 2rem);
+    min-width: 250px;
+    border-bottom: 0.01rem solid #ddd;
+    padding-bottom: 2rem;
+}
+
+/* تنسيق صور الوجبات */
+.menu__img {
+    width: 12rem; 
+    height: 12rem; 
+    object-fit: cover; 
+    border: 0.01rem solid rgba(0, 0, 0, 0.1);
+    border-radius: 2rem;
+    box-shadow: 0rem 0.1rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+
+/* تنسيق عناصر تذييل الصفحة */
+#cart-footer {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/* تنسيق السعر الكلي والعدد الكلي للوجبات */
+#total-price, #total-items {
+    margin-bottom: 1rem;
+    color: #222222;
+    font-size: 1.2rem;
+}
+
+/* تنسيق زر الطلب عبر واتساب وزر حذف جميع الوجبات */
+.cartfooter-btns{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+button {
+    background-color: #f5e7c6;
+    color: #222222;
+    padding: 1rem 2rem;
+    margin: 0.5rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+}
+
+.cartfooter-btns button:hover {
+    background-color: #fa7d39;
+    color: #faf3e1;
+}
+
+/* تنسيق العناصر التي ستظهر عندما تكون العربة فارغة */
+#empty-cart-message {
+    text-align: center;
+    margin-top: 0.4rem;
+}
+
+#empty-cart-message p{
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+/* تنسيق رابط تصفح الوجبات */
+#empty-cart-message .btn{
+    color: #fa7d39;
+    font-size: 2rem;
+}
+
+#empty-cart-message .btn:hover{
+    font-size: 2.5rem;
+    transition: 0.2s;
+}
+
+/* تنسيق أيقونة العربة */
+.fa-shopping-cart{
+    color: #fa7d39;
+    font-size: 3rem;
+    margin-bottom: 1.8rem;
+}
+
+/* تنسيق الرسالة التي تظهر عند طلب الوجبة */
+.message {
+    background-color: #222222 ;
+    font-size: 20px;
+    color: #fa7d39 ;
+    border: 1px solid #f5e7c6;
+    padding: 20px;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+    
+.message-text {
+    flex-grow: 1;
+}
+    
+.message-close {
+    background: none;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    margin-left: -10px;
+    margin-right: 10px;
+    color: #fa7d39;
+}
+
+/* تنسيق العناصر التي تحتوي تفاصيل الوجبة */
+.cart-item div {
+    flex: 1 1 100%;
+}
+
+.cart-item h4 {
+    font-size: 1rem;
+    color: #fa7d39 ;
+    margin-bottom: 1rem;
+    width: calc(80%);
+    font-family: "Cairo", sans-serif;
+}
+
+.cart-item p {
+    margin: 0.5rem 0;
+    color: var(--text);
+    font-family: "Cairo", sans-serif;
+    width: calc(100% + 30rem);
+    font-size: 1.2rem;
+}
+
+/* تنسيق عدد مرات طلب الوجبة وأزرار التحكم بالكمية وزر الحذف */
+
+.info-and-quantity-and-removeitem{
+    display: flex;
+    gap: 10rem;
+}
+
+.cart-item .quantity-controls {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.cart-item button {
+    background-color: #fa7d39 ;
+    border-radius: 0.2rem;
+    color: #f5e7c6;
+    padding: 0.2rem 0.4rem;
+    margin: 0 0.2rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: "Cairo", sans-serif;
+    font-weight: 800;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.cart-item button:hover {
+    background-color: #f5e7c6;
+    color: #fa7d39 ;
+}
+
+.cart-item .quantity-controls button {
+    margin: 0 0.5rem;
+}
+
+/* Media Queries */
+
+@media (max-width: 794px) {
+    .cart-item {
+        width: calc(45% - 2rem); /* زيادة عرض العناصر في الشاشات الأصغر */
+    }
+}
+
+@media (min-width: 713px) and (max-width: 783px ) {
+    .menu__img {
+        width: 14rem;  height: 15rem;
+    }
+}
+
+@media (min-width: 550px) and (max-width: 712px ) {
+    .menu__img {
+        width: 22rem; height: 15rem;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 554px ) {
+    .menu__img {
+        width: 19rem;  height: 15rem; 
+    }
+}
+@media (max-width: 560px) {
+    .cart-item {
+        width: calc(90% - 2rem); /* عرض العناصر بشكل كامل في الشاشات الصغيرة جداً */
+    }
+}
+
+@media (max-width: 388px ) {
+    .menu__img {
+        width: 9.8rem;  height: 9.8rem; 
+    }
+}
